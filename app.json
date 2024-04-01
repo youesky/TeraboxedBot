@@ -1,0 +1,43 @@
+{
+  "name": "Terabox Link Bypass",
+  "description": "Terabox Link Bypass is a Telegram bot based on Pyrogram for bypassing terabox.app links.",
+  "repository": "https://github.com/bakamono12/Terabox-Bypass",
+  "logo": "https://avatars1.githubusercontent.com/u/34474300?s=280&v=4",
+  "keywords": [
+    "python",
+    "pyrogram",
+    "telegram",
+    "bot",
+    "userbot",
+    "Forwarder"
+  ],
+  "image": "heroku/python",
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "env": {
+    "SESSION_STRING": {
+      "description": "Session string from auth.py file or use the Replit link button in README.md",
+      "required": true
+    },
+    "MY_COOKIES": {
+      "description": "Your cookies from terabox.app",
+      "required": true
+    },
+    "MY_HEADERS": {
+      "description": "Your headers from terabox.app",
+      "required": true
+    },
+    "ALLOWED_GROUPS": {
+      "description": "List of allowed groups for the bot e.g. [-1001234567890, -1001234567890]",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram user ID",
+      "required": true
+    },
+  }
+}
