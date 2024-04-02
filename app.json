@@ -1,43 +1,50 @@
 {
-  "name": "Terabox Link Bypass",
-  "description": "Terabox Link Bypass is a Telegram bot based on Pyrogram for bypassing terabox.app links.",
-  "repository": "https://github.com/bakamono12/Terabox-Bypass",
-  "logo": "https://avatars1.githubusercontent.com/u/34474300?s=280&v=4",
-  "keywords": [
-    "python",
-    "pyrogram",
-    "telegram",
-    "bot",
-    "userbot",
-    "Forwarder"
-  ],
-  "image": "heroku/python",
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "eco"
+    "name": "TeraboxedBot",
+    "description": "Python Telegram Bot for Bypassing Terabox Links",
+    "logo": "https://te.legra.ph/file/de51e8d53709471b25fea.jpg",
+    "keywords": [
+        "python",
+        "pyrogram",
+        "telegram",
+        "bot",
+        "teraboxedbot",
+        "terabox"
+    ],
+    "repository": "https://github.com/youesky/TeraboxedBot",
+    "env": {
+        "WEBHOOK": {
+            "description": "True/False if your server is web support required? the value is True else False",
+            "value": "False",
+            "required": false
+        },
+        "BOT_TOKEN": {
+            "description": "Your bot token.",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": false
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": false
+        },
+        "ADMINS": {
+            "description": "Username or ID of Admin. Separate multiple Admins by space.",
+            "required": true
+        },
+        "IMAGES": {
+            "description": "Add some telegraph link of pictures. Separate multiple Links by space.",
+            "required": false
+        }
+    },
+    "buildpacks": [
+        { "url": "heroku/python" }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "basic"
+        }
     }
-  },
-  "env": {
-    "SESSION_STRING": {
-      "description": "Session string from auth.py file or use the Replit link button in README.md",
-      "required": true
-    },
-    "MY_COOKIES": {
-      "description": "Your cookies from terabox.app",
-      "required": true
-    },
-    "MY_HEADERS": {
-      "description": "Your headers from terabox.app",
-      "required": true
-    },
-    "ALLOWED_GROUPS": {
-      "description": "List of allowed groups for the bot e.g. [-1001234567890, -1001234567890]",
-      "required": true
-    },
-    "OWNER_ID": {
-      "description": "Your Telegram user ID",
-      "required": true
-    },
-  }
 }

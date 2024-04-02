@@ -1,61 +1,97 @@
 # TeraboxedBot ⚡
 
-The *TeraboxedBot* is designed to help users get direct download links from TeraBox files on Telegram.
+The TeraboxedBot is designed to help users get direct download links from TeraBox files on Telegram.
 
 ![icon.jpg](https://te.legra.ph/file/7680309a045c8063a08c7.jpg)
 
-## Features
 
-- **Media Liberation:** Bypass anti-forward/copy restrictions and transfer media files, including photos and videos.
-- **Account Integration:** Securely connect GhostForwarder with your Telegram account for a personalized experience.
-- **Selective Transfer:** Choose specific media items to transfer, providing you with control and flexibility.
-- **Stealth Mode:** Operate discreetly, minimizing disruption and maintaining the privacy of your interactions.
+### **Features:**
 
-## How to Use
+1. **Start Command:**
+   - `/start`: Initiates communication with the bot, presenting users with a refined introduction and clear usage instructions.
 
-1. **Authentication:**
-   - Authenticate GhostForwarder with your Telegram account.
-   - Use the `auth` file to authenticate the app or ...
-   - Use [![Run on Repl.it](https://replit.com/badge/github/bakamono12/GhostForwarder)](https://replit.com/@baka1432/PyroGramAuth) to get the `session string`.
+2. **Link Handling:**
+   - Automatically detects TeraBox links in messages, ensuring a polished user experience.
+   - Validates URLs, fetching direct download links with a commitment to precision.
+   - Presents file details such as title, size, and download link in a structured and professional manner.
 
-2. **Source Chat Specification:**
-   - Specify the source chat ID with anti-forward/copy restrictions, use the `/help` command to know more.
+3. **Access Control:**
+   - Restricts usage to private chats or specified groups, prioritizing privacy and controlled access.
+   - Issues a courteous warning when accessed from unauthorized groups.
 
-3. **Destination Chat Selection:**
-   - Saved Message will be used for the transferred media or any update error.
+---
 
-4. **Media Transfer:**
-   - Now media items can be transferred from the sources chat IDs once you request anyfile or receive any video files in  mentioned chats.
+### **How to Use:**
 
-5. **Enjoy:**
-   - Sit back and enjoy hassle-free media transfer while preserving the privacy of your communications.
+1. **Start a Chat:**
+   - Initiate a private chat with the bot, ensuring a discreet and personalized experience.
 
-## Getting Started
+2. **Send TeraBox Links:**
+   - Share TeraBox links with the bot, guaranteeing a streamlined interaction.
 
-To get started with GhostForwarder, follow these steps to run the application locally:
+3. **Receive Download Links:**
+   - Experience the bot's efficiency as it provides direct download links and comprehensive file information.
 
-1. Clone the repository.
-2. Set up the necessary environment variables.
-3. Install dependencies using `pip install` [requirements.txt](requirements.txt).
-4. Run the application using `python -m main.py`.
-5. This Will run your app locally.
+---
 
 ## Deployment
-Deployment is easy, you can deploy GhostForwarder on Heroku or Railway.\
-1. Fork this repository.
-2. [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/qHge9_?referralCode=IEUhZ-)
-3. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-4. And Wait for the build to start..
-5. In environment variable section, add the following variables:
-   - `SESSION_STRING` : Get it from [![Run on Repl.it](https://replit.com/badge/github/bakamono12/GhostForwarder)](https://replit.com/@baka1432/PyroGramAuth).
-6. Restart the app and enjoy.
-7. To check if app is live or not, use `/boomer` command in Saved Messages or Any Chat.
+Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
+1. Star and fork this repository.
+2. Deploy
 
-## Contributing
+<br><details>
+<summary><b>Deploy to Heroku</b></summary>
 
-- **Bot Developer:**
-  - [EBIZA](https://t.me/ebiza)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youesky/TeraboxedBot)
+</details>
 
-## License
+<details>
+<summary><b>Deploy to Koyeb</b></summary>
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
+</details>
+
+<details>
+<summary><b>Deploy to Railway</b></summary>
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/_l3iQY?referralCode=IEUhZ-)
+</details>
+
+
+3. In environment variable section, add the following variables:
+
+<details>
+<summary><b>Variables</b></summary>
+  
+### Required Variables
+* `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
+
+### Optional Variables
+* `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
+* `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
+* `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
+* `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
+* `WEBHOOK`: True/False if your server is web support required? the value is True else False
+</details>
+
+4. Click on Deploy.
+5. Restart the app and enjoy.
+
+---
+
+## TELAGRAM SUPPORT 
+
+* [![EBIZA SUPPORT](https://img.shields.io/static/v1?label=SUPPORT&message=EBIZA-SUPPORT&color=critical)](https://t.me/EbizaSupport)
+
+## Credit 💞
+
+* [![EBIZA](https://img.shields.io/static/v1?label=OWNER&message=EBIZA&color=yellow)](https://t.me/ebiza)
+
+* [![BASE REPO](https://img.shields.io/static/v1?label=BASE&message=REPO&color=green)](https://github.com/bakamono12/Terabox-Bypass)
+
+## Disclaimer
+
+This bot is intended for educational and personal use only, upholding the highest standards of ethical use.
+[![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)    
+Licensed under [GNU AGPL 2.0.](https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
+Selling The Codes To Other People For Money Is *Strictly Prohibited*.

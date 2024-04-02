@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from re import findall
 from time import time
 from datetime import datetime
 
@@ -23,9 +22,3 @@ def get_readable_time(seconds):
             period_value, seconds = divmod(seconds, period_seconds)
             result += f'{int(period_value)}{period_name}'
     return result
-
-def extract_links(message):
-    try: return findall(r'https?://\S+', message)
-    except Exception as e:
-        logger.error(f"Error extracting links: {e}")
-        return []
