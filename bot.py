@@ -1,12 +1,12 @@
 import os
-import time, datetime, pytz
+import time, msth, datetime, pytz
 import logging, asyncio
 import logging.config
 
 from aiohttp import web
+from plugins import web_server
 from pyrogram import Client, enums
 
-from plugins import web_server
 from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
@@ -60,5 +60,4 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-if __name__ == '__main__':
-    Bot().run()
+Bot().run()
