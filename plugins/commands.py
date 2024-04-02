@@ -20,8 +20,11 @@ async def link_handler(client, message):
     start_time = time.time()
     print("heyy")
     urls = extract_links(message.text or message.caption)
+    print("heyy2")
     if not urls: return sendMessage(message, "⚠️ No valid URLs found!")
+    print("heyy3")
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
+    print("heyy2")
     if not terabox_urls: return sendMessage(message, "⚠️ Not a valid Terabox URL!")
     try:
         reply = await sendMessage(message, BotTheme('BYPASSING_URL'))

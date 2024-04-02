@@ -92,11 +92,7 @@ def terabox(url):
     return details['contents'][0]['url'], details['title'], details['total_size']
     
 def extract_links(message):
-    try:
-        url_pattern = r'https?://\S+'
-        matches = findall(url_pattern, message)
-
-        return matches
+    try: return findall(r'https?://\S+', message)
     except Exception as e:
         logger.error(f"Error extracting links: {e}")
         return []
