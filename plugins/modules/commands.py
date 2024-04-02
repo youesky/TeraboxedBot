@@ -2,14 +2,14 @@ import time, asyncio
 from pyrogram import Client, filters
 from pyrogram.filters import command, regex
 
+from bot import logger
+
 from plugins.helper.ext_utils.bot_utils import get_readable_time
 from plugins.helper.ext_utils.bulk_links import extract_links, check_url_patterns_async
 from plugins.helper.ext_utils.task_manager import format_message
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
-
-from bot import logger
 
 
 @Client.on_message(command("start"))
@@ -26,10 +26,8 @@ async def link_handler(client, message):
     urls = extract_links(message.text or message.caption)
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
     if not terabox_urls: return await sendMessage(message, BotTheme('NON_VALID_URL'))
-    try:
-        reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
-        link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
-        time_taken_help = get_readable_time(time.time() - start_time)
-        await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help), photo='IMAGES')
-    except Exception as e:
-        logger.error(e)
+    reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
+    link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
+    time_taken_help = get_readable_time(time.time() - start_time)
+    try: await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help), photo='IMAGES')
+    except Exception as e: logger.error(e)

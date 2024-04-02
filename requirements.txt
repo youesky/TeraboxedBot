@@ -1,6 +1,5 @@
-git+https://github.com/MKN-BOTZ/pyrogram
+pyrogram
 tgcrypto
 aiohttp
 requests
 pytz
-psutil
