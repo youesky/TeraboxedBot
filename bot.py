@@ -3,13 +3,10 @@ import time, math, datetime, pytz
 import logging, asyncio
 import logging.config
 
-from aiohttp import web
-from plugins import web_server
 from pyrogram import Client, enums
 
-from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK
+from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG
 from utils import temp, __repo__, __license__, __copyright__, __version__
-
 
 logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.INFO)
@@ -48,17 +45,14 @@ class Bot(Client):
         logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
         try: await self.send_message(ADMINS[0], LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
         except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
-        if WEBHOOK is True:
-            app = web.AppRunner(await web_server())
-            await app.setup()
-            await web.TCPSite(app, "0.0.0.0", 8080).start()
-            logger.info("Web Response Is Running......🕸️")
         logger.info(f"Teraboxed Bot [@{me.username}] Started!")
 
     async def stop(self, *args):
         await super().stop()
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
+
+
 
 if __name__ == "__main__":
     bot = Bot()
