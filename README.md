@@ -21,7 +21,7 @@ The *TeraboxedBot* is designed to help users get direct download links from Tera
 
 GhostForwarder is a Telegram bot based on pyrogram, designed to simplify media transfer from chats with anti-forward/copy restrictions to your specified destination chats. With GhostForwarder, you can seamlessly move media files while preserving the privacy and integrity of your interactions.
 
-![icon.jpg](https://te.legra.ph/file/de51e8d53709471b25fea.jpg)
+![icon.jpg](https://te.legra.ph/file/7680309a045c8063a08c7.jpg)
 
 ## Features
 

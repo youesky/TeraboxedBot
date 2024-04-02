@@ -13,7 +13,7 @@ async def start(client, message):
     buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
     buttons.ubutton(BotTheme('ST_BN2_NAME'), BotTheme('ST_BN2_URL'))
     reply_markup = buttons.build_menu(2)
-    await sendMessage(message, BotTheme('ST_MSG'))
+    await sendMessage(message, reply_markup, BotTheme('ST_MSG'))
 
 @Client.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
 async def link_handler(client, message):
