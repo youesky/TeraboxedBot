@@ -3,7 +3,6 @@ from pyrogram import Client, filters
 from pyrogram.filters import command, regex
 
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
-from plugins.helper.telegram_helper.filters import CustomFilters
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
 from plugins.terabox import format_message

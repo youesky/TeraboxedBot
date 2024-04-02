@@ -62,3 +62,4 @@ if __name__ == "__main__":
     bot = Bot()
     if not bot.is_initialized:
         bot.run()
+        logger.info(f"if not")
