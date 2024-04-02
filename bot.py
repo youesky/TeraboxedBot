@@ -59,4 +59,4 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
-Bot().run()
+await Bot().run()
