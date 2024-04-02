@@ -1,7 +1,6 @@
 import os
 import time, math, datetime, pytz
-import logging, asyncio
-import logging.config
+import logging, logging.config
 
 from pyrogram import Client, enums
 
