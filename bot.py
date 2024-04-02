@@ -7,7 +7,7 @@ from aiohttp import web
 from plugins import web_server
 from pyrogram import Client, enums
 
-from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
+from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
 
