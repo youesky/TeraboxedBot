@@ -59,8 +59,9 @@ class Bot(Client):
 
 async def set_commands(client):
     if not SET_COMMANDS: return
-    try: await client.set_bot_commands([BotCommand("start", "Alive!?"), BotCommand("restart", "[Admins Only]")])
-    logger.info('Bot Commands have been Set & Updated')
+    try:
+        await client.set_bot_commands([BotCommand("start", "Alive!?"), BotCommand("restart", "[Admins Only]")])
+        logger.info('Bot Commands have been Set & Updated')
     except Exception as e: logger.error(e)
         
 async def start_bot():
