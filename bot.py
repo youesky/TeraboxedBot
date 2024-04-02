@@ -1,5 +1,5 @@
 import os, logging, datetime, pytz, time
-import loggingconfig
+import logging.config
 
 from aiohttp import web
 from pyrogram import Client
