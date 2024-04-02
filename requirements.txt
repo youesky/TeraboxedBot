@@ -1,11 +1,6 @@
-#--Main----#
-Pyrogram 
-TgCrypto
+https://github.com/TGExplore/pyrogram.git
+tgcrypto
 aiohttp
 requests
-
-#---imdb---#
-cinemagoer==2023.5.1
-
-#---others----#
 pytz
+psutil
