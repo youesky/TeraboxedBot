@@ -40,7 +40,6 @@ class Bot(Client):
         self.username = me.username
         self.admins = ADMINS[0]
         self.uptime = time.time()
-        await set_commands(Bot)
         curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
@@ -59,5 +58,9 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
+async def start_bot():
+    await set_commands(Bot)
+    await Bot().start()
+
 if __name__ == "__main__":
-    bot = Bot()
+    asyncio.run(start_bot())
