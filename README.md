@@ -48,7 +48,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     <details>
     <summary>Deploy to Koyeb</summary>
     
-    <br>[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
+    <br>[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[SET_COMMANDS]=True&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
     </details>
     
     <details>

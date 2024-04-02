@@ -8,8 +8,9 @@ ADMINS = []
 # Optional Variables
 API_ID = int(getenv("API_ID", "28542813"))
 API_HASH = getenv("API_HASH", "02ce7c339f7776844ff4ab03da338ccd")
-WEBHOOK = bool(getenv("WEBHOOK", False)) # for web support on/off
-IMAGES = []
+SET_COMMANDS = bool(getenv("SET_COMMANDS", True)) # Set bot command automatically. Bool
+WEBHOOK = bool(getenv("WEBHOOK", False)) # For web support On/Off. Bool
+images = []
 
 # ---------- DON'T TOUCH THIS ---------- #
 LOG_MSG = "{} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ....✨\n\n🗓️ Dᴀᴛᴇ : {}\n⏰ Tɪᴍᴇ : {}\n\n🖥️ Rᴇᴘᴏ: {}\n🉐 Vᴇʀsɪᴏɴ: {}\n🧾 Lɪᴄᴇɴꜱᴇ: {}\n©️ Cᴏᴩʏʀɪɢʜᴛ: {}"
