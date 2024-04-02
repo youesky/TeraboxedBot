@@ -24,7 +24,7 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=1000,
+            workers=200,
             plugins={"root": "plugins"},
             sleep_threshold=10,
             parse_mode=enums.ParseMode.HTML

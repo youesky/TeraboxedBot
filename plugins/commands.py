@@ -5,7 +5,7 @@ from pyrogram.filters import command, regex
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
-from plugins.terabox import format_message
+from plugins.terabox import format_message, extract_links
 
 @Client.on_message(command("start"))
 async def start(client, message):
