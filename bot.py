@@ -60,8 +60,8 @@ class Bot(Client):
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
 if __name__ == "__main__":
-    loop.run_until_complete(Bot())
-    '''bot = Bot()
+    #loop.run_until_complete(Bot())
+    bot = Bot()
     if not bot.is_initialized:
         bot.run()
         logger.info(f"if not")'''
