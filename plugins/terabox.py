@@ -5,8 +5,8 @@ from requests import Session
 from http.cookiejar import MozillaCookieJar
 from urllib.parse import urlparse, parse_qs
 
-from bot import logger
 from plugins.helper.ext_utils.bot_utils import get_readable_file_size
+from plugins.helper.ext_utils.exceptions import DirectDownloadLinkException
 from plugins.helper.themes import BotTheme
 
 def terabox(url):
@@ -115,10 +115,7 @@ async def check_url_patterns_async(url):
         r"www\.tibibox\.com",
         r"www\.teraboxapp\.com",
     ]
-    for pattern in patterns:
-        if search(pattern, url):
-            return True
-    return False
+    return any(search(pattern, url) for pattern in patterns)
 
 async def format_message(link_data):
     download_link, title, total_size = terabox(link_data)
