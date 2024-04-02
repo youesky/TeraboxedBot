@@ -19,21 +19,16 @@ async def start(client, message):
 @Client.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
 async def link_handler(client, message):
     start_time = time.time()
-    print("1")
     urls = extract_links(message.text or message.caption)
-    print("b")
     if not urls: return sendMessage(message, "⚠️ No valid URLs found!")
-    print("c")
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
-    print("d")
     if not terabox_urls: return sendMessage(message, "⚠️ Not a valid Terabox URL!")
-    print("e")
     try:
-        reply = await sendMessage(message, BotTheme('BYPASSING_URL'))
+        reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
         link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
         time_taken_help = get_readable_time(time.time() - start_time)
         print("f")
-        await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help))
+        await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help), photo='IMAGES')
         print("g")
     except Exception as e:
         LOGGER.error(e)
