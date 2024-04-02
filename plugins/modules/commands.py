@@ -6,7 +6,7 @@ from plugins.helper.ext_utils.bot_utils import get_readable_time, extract_links
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
-from plugins.terabox import format_message, check_url_patterns_async
+from plugins.modules.terabox import format_message, check_url_patterns_async
 
 @Client.on_message(command("start"))
 async def start(client, message):

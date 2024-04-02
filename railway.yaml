@@ -1,0 +1,7 @@
+version: 1
+services:
+  web:
+    image: python:3.10
+    command: python main.py
+    envs:
+      RAILWAY: "true"
