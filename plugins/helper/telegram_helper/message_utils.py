@@ -25,8 +25,7 @@ async def sendMessage(message, text, buttons=None, photo=None, **kwargs):
 
 async def editMessage(message, text, buttons=None, photo=None):
     try:
-        if message.media:
-            return await message.edit_caption(caption=text, reply_markup=buttons)
+        #if message.media: return await message.edit_caption(caption=text, reply_markup=buttons)
         await message.edit(text=text, disable_web_page_preview=True, reply_markup=buttons)
     except FloodWait as f:
         logger.warning(str(f))
