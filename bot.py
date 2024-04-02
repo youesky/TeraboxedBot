@@ -26,9 +26,8 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=200,
-            plugins={"root": "plugins"},
-            sleep_threshold=10,
+            workers=1000,
+            plugins={"root": "plugins"}
         )
 
     async def start(self):
@@ -59,4 +58,7 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
-Bot().run()
+if __name__ == "__main__":
+    bot = Bot()
+    if not bot.is_initialized:
+        bot.run()
