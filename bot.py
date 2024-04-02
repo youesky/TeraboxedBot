@@ -7,7 +7,6 @@ from pyrogram import Client, enums
 
 from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG
 from utils import temp, __repo__, __license__, __copyright__, __version__
-from plugins.helper.ext_utils.bot_utils import set_commands
 
 logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.INFO)
@@ -53,9 +52,6 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-
-
 if __name__ == "__main__":
     bot = Bot()
     asyncio.run(bot.run())
-    set_commands(Bot)
