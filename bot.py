@@ -64,7 +64,4 @@ class Bot(Client):
         
 if __name__ == "__main__":
     #loop.run_until_complete(Bot())
-    bot = Bot()
-    if not bot.is_initialized:
-        bot.run()
-        logger.info(f"if not")
+    Bot().run()
