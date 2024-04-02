@@ -1,25 +1,6 @@
 # TeraboxedBot ⚡
 
----
-
-### **Description:**
 The *TeraboxedBot* is designed to help users get direct download links from TeraBox files on Telegram.
-
----
-
-## **Under Development**
-
----
-### **Contributors:**
-
-- **Bot Developer:**
-  - [EBIZA](https://t.me/ebiza)
-  - 
-  
-
-# GhostForwarder
-
-GhostForwarder is a Telegram bot based on pyrogram, designed to simplify media transfer from chats with anti-forward/copy restrictions to your specified destination chats. With GhostForwarder, you can seamlessly move media files while preserving the privacy and integrity of your interactions.
 
 ![icon.jpg](https://te.legra.ph/file/7680309a045c8063a08c7.jpg)
 
@@ -72,7 +53,8 @@ Deployment is easy, you can deploy GhostForwarder on Heroku or Railway.\
 
 ## Contributing
 
-Contributions are welcome !
+- **Bot Developer:**
+  - [EBIZA](https://t.me/ebiza)
 
 ## License
 
