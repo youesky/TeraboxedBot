@@ -6,9 +6,9 @@ from bot import logger
 from plugins.helper.themes import ebiza_candy
 
 AVL_THEMES = {"candy": ebiza_candy}
-for theme in listdir('bot/helper/themes'):
+for theme in listdir('plugins/helper/themes'):
     if theme.startswith('ebiza_') and theme.endswith('.py'):
-        AVL_THEMES[theme[5:-3]] = import_module(f'bot.helper.themes.{theme[:-3]}')
+        AVL_THEMES[theme[5:-3]] = import_module(f'plugins.helper.themes.{theme[:-3]}')
 
 def BotTheme(var_name, **format_vars):
     text = None
