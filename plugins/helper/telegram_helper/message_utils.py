@@ -3,6 +3,7 @@ import asyncio
 from random import choice as rchoice
 
 from pyrogram.enums import ParseMode
+from pyrogram.types import InputMediaPhoto
 from pyrogram.errors import ReplyMarkupInvalid, FloodWait, MessageNotModified, MessageEmpty
 
 from bot import logger

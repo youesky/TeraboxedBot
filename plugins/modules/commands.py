@@ -29,8 +29,6 @@ async def link_handler(client, message):
         reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
         link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
         time_taken_help = get_readable_time(time.time() - start_time)
-        print("a")
         await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help), photo='IMAGES')
-        print("b")
     except Exception as e:
         logger.error(e)
