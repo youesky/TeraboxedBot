@@ -8,7 +8,7 @@ from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.themes import BotTheme
 from bot.plugins.terabox import format_message
 
-@Bot.on_message(command("start"))
+@Client.on_message(command("start"))
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
@@ -16,7 +16,7 @@ async def start(client, message):
     reply_markup = buttons.build_menu(2)
     await sendMessage(message, BotTheme('ST_MSG'))
 
-@Bot.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
+@Client.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
 async def link_handler(client, message):
     start_time = time.time()
     urls = extract_links(message.text or message.caption)
