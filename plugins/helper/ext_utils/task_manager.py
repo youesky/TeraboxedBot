@@ -1,4 +1,4 @@
-from plugins.helper.utils.download_utils.direct_link_generator import terabox
+from plugins.helper.mirror_utils.download_utils.direct_link_generator import terabox
 from plugins.helper.ext_utils.bot_utils import get_readable_file_size
 
 
