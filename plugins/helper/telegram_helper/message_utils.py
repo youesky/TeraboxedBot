@@ -2,7 +2,7 @@
 from pyrogram.enums import ParseMode
 from pyrogram.errors import ReplyMarkupInvalid, FloodWait, MessageNotModified, MessageEmpty
 
-from .bot import logger
+from bot import logger
 
 
 async def sendMessage(message, text, buttons=None, photo=None, **kwargs):
