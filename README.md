@@ -37,43 +37,42 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
 ## Deployment
 Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
 1. Star and fork this repository.
-2. Deploy
+2. Deploy:
 
-<br><details>
-<summary><b>Deploy to Heroku</b></summary>
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youesky/TeraboxedBot)
-</details>
-
-<details>
-<summary><b>Deploy to Koyeb</b></summary>
-
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
-</details>
-
-<details>
-<summary><b>Deploy to Railway</b></summary>
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/_l3iQY?referralCode=IEUhZ-)
-</details>
-
+    <details>
+    <summary><b>Deploy to Heroku</b></summary>
+    
+    [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youesky/TeraboxedBot)
+    </details>
+    
+    <details>
+    <summary><b>Deploy to Koyeb</b></summary>
+    
+    <br>[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
+    </details>
+    
+    <details>
+    <summary><b>Deploy to Railway</b></summary>
+    
+    <br>[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/_l3iQY?referralCode=IEUhZ-)
+    </details>
 
 3. In environment variable section, add the following variables:
 
-<details>
-<summary><b>Variables</b></summary>
-  
-### Required Variables
-* `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
-
-### Optional Variables
-* `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
-* `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-* `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
-* `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
-* `WEBHOOK`: True/False if your server is web support required? the value is True else False
-</details>
-
+    <details>
+    <summary><b>Variables</b></summary>
+      
+    ### Required Variables
+    * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
+    
+    ### Optional Variables
+    * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
+    * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
+    * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
+    * `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
+    * `WEBHOOK`: True/False if your server is web support required? the value is True else False
+    </details>
+    
 4. Click on Deploy.
 5. Restart the app and enjoy.
 
