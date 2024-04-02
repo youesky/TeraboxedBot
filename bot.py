@@ -6,7 +6,8 @@ import logging.config
 from aiohttp import web
 from pyrogram import Client, enums
 
-from plugins import web_server 
+from plugins import web_server
+from plugins.helper.telegram_helper.message_utils import sendMessage
 from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
@@ -24,8 +25,9 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=1000,
+            workers=200,
             plugins={"root": "plugins"},
+            sleep_threshold=10,
             parse_mode=enums.ParseMode.HTML
         )
 
@@ -45,7 +47,7 @@ class Bot(Client):
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
         logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
-        try: await self.send_message(LOG_CHANNEL, text=LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
+        try: await self.sendMessage(LOG_CHANNEL, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
         except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To LOG_CHANNEL \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
@@ -60,7 +62,5 @@ class Bot(Client):
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
     bot = Bot()
     bot.run()
-    loop.run_forever()
