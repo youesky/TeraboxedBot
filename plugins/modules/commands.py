@@ -8,6 +8,9 @@ from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
 from plugins.modules.terabox import format_message, check_url_patterns_async
 
+from bot import logger
+
+
 @Client.on_message(command("start"))
 async def start(client, message):
     buttons = ButtonMaker()
@@ -21,14 +24,13 @@ async def link_handler(client, message):
     start_time = time.time()
     urls = extract_links(message.text or message.caption)
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
-    if not terabox_urls: return await sendMessage(message, "⚠️ Not a valid Terabox URL!")
-    print("e")
+    if not terabox_urls: return await sendMessage(message, BotTheme('NON_VALID_URL'))
     try:
         reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
         link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
         time_taken_help = get_readable_time(time.time() - start_time)
-        print("f")
+        print("a")
         await editMessage(reply, BotTheme('LINK_BYPASSED', link_message=link_message_help, time_taken=time_taken_help), photo='IMAGES')
-        print("g")
+        print("b")
     except Exception as e:
-        LOGGER.error(e)
+        logger.error(e)
