@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import asyncio
 from random import choice as rchoice
 
 from pyrogram.enums import ParseMode

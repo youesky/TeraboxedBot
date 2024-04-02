@@ -14,7 +14,7 @@ async def start(client, message):
     buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
     buttons.ubutton(BotTheme('ST_BN2_NAME'), BotTheme('ST_BN2_URL'))
     reply_markup = buttons.build_menu(2)
-    await sendMessage(message, BotTheme('ST_MSG'), reply_markup)
+    await sendMessage(message, BotTheme('ST_MSG'), reply_markup, photo='IMAGES')
 
 @Client.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
 async def link_handler(client, message):
@@ -23,6 +23,7 @@ async def link_handler(client, message):
     if not urls: return sendMessage(message, "⚠️ No valid URLs found!")
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
     if not terabox_urls: return sendMessage(message, "⚠️ Not a valid Terabox URL!")
+    print("e")
     try:
         reply = await sendMessage(message, BotTheme('BYPASSING_URL'), photo='IMAGES')
         link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
