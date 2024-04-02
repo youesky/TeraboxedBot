@@ -7,7 +7,6 @@ from aiohttp import web
 from pyrogram import Client, enums
 
 from plugins import web_server
-from plugins.helper.telegram_helper.message_utils import sendMessage
 from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
@@ -47,7 +46,7 @@ class Bot(Client):
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
         logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
-        try: await self.sendMessage(LOG_CHANNEL, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
+        try: await self.sent_message(LOG_CHANNEL, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
         except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To LOG_CHANNEL \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
