@@ -1,2 +1,2 @@
 web: python3 bot.py
-ebiza: python bot.py
+worker: python bot.py
