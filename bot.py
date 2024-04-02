@@ -56,8 +56,5 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-async def start_bot():
-    await Bot().start()
-
-if __name__ == "__main__":
-    asyncio.run(start_bot())
+app = Bot()
+app.run()
