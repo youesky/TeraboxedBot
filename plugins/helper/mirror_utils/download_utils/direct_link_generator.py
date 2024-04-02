@@ -8,10 +8,10 @@ from plugins.helper.ext_utils.exceptions import DirectDownloadLinkException
 
 
 def terabox(url):
-    if not path.isfile('cookies.txt'):
-        raise DirectDownloadLinkException("ERROR: cookies.txt not found")
+    if not path.isfile('plugins/helper/mirror_utils/download_utils/cookies.txt'):
+        raise DirectDownloadLinkException("cookies.txt not found")
     try:
-        jar = MozillaCookieJar('cookies.txt')
+        jar = MozillaCookieJar('plugins/helper/mirror_utils/download_utils/cookies.txt')
         jar.load()
     except Exception as e:
         raise DirectDownloadLinkException(f"ERROR: {e.__class__.__name__}") from e
