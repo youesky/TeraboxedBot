@@ -5,7 +5,7 @@ from pyrogram.filters import command, regex
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
-from plugins.terabox import format_message, extract_links
+from plugins.terabox import format_message, extract_links, check_url_patterns_async
 
 @Client.on_message(command("start"))
 async def start(client, message):
@@ -24,8 +24,9 @@ async def link_handler(client, message):
     if not urls: return sendMessage(message, "⚠️ No valid URLs found!")
     print("heyy3")
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
-    print("heyy2")
+    print("heyy4")
     if not terabox_urls: return sendMessage(message, "⚠️ Not a valid Terabox URL!")
+    print("heyy4")
     try:
         reply = await sendMessage(message, BotTheme('BYPASSING_URL'))
         link_message_help = "\n\n".join([await format_message(link) for link in terabox_urls])
