@@ -62,7 +62,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     <details>
     <summary><b>Variables</b></summary>
       
-      <b>Required Variables</b>
+      <b>Required Variable</b>
     * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
         
       <b>Optional Variables</b>
@@ -78,19 +78,19 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
 
 ---
 
-## TELAGRAM SUPPORT 
+### TELAGRAM SUPPORT 
 
-* [![EBIZA SUPPORT](https://img.shields.io/static/v1?label=SUPPORT&message=EBIZA-SUPPORT&color=critical)](https://t.me/EbizaSupport)
+* [![EBIZA SUPPORT](https://img.shields.io/static/v1?label=EBIZA&message=SUPPORT&color=critical)](https://t.me/EbizaSupport)
 
-## Credit 💞
+### Credit 💞
 
 * [![EBIZA](https://img.shields.io/static/v1?label=OWNER&message=EBIZA&color=yellow)](https://t.me/ebiza)
 
 * [![BASE REPO](https://img.shields.io/static/v1?label=BASE&message=REPO&color=green)](https://github.com/bakamono12/Terabox-Bypass)
 
-## Disclaimer
+### Disclaimer
 
 [![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)<br>
-#### Licensed under [GNU AGPL 2.0.](https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
+<b>Licensed under <a href="https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE">GNU AGPL 2.0.</a></b>
 <b>This bot is intended for educational and personal use only, upholding the highest standards of ethical use.</b><br>
 <b>Selling The Codes To Other People For Money Is Strictly Prohibited.</b>
