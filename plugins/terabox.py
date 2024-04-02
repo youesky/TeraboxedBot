@@ -6,7 +6,7 @@ from http.cookiejar import MozillaCookieJar
 from urllib.parse import urlparse, parse_qs
 
 from bot import logger
-from plugins.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
+from plugins.helper.ext_utils.bot_utils import get_readable_file_size
 from plugins.helper.themes import BotTheme
 
 def terabox(url):
@@ -91,12 +91,6 @@ def terabox(url):
             raise DirectDownloadLinkException(e)
     return details['contents'][0]['url'], details['title'], details['total_size']
     
-def extract_links(message):
-    try: return findall(r'https?://\S+', message)
-    except Exception as e:
-        logger.error(f"Error extracting links: {e}")
-        return []
-
 async def check_url_patterns_async(url):
     patterns = [
         r"ww\.mirrobox\.com",

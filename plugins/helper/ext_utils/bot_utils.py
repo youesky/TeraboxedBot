@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import re
+from re import findall
 from time import time
 from datetime import datetime
 
@@ -25,12 +25,7 @@ def get_readable_time(seconds):
     return result
 
 def extract_links(message):
-    # fetch all links
-    try:
-        url_pattern = r'https?://\S+'
-        matches = re.findall(url_pattern, message)
-
-        return matches
+    try: return findall(r'https?://\S+', message)
     except Exception as e:
         logger.error(f"Error extracting links: {e}")
         return []

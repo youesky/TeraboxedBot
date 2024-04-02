@@ -1,13 +1,14 @@
 import os, sys, asyncio
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.filters import command, user
+
 from config import OWNER_ID
+from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 
 
-@Client.on_message(filters.command("restart") & filters.user(OWNER_ID))
+@Client.on_message(command("restart") & user(OWNER_ID))
 async def restart_bot(bot, msg):
-    sts = await msg.reply("Restarting........")
+    reply = await sendMessage(message, "Restarting........")
     await asyncio.sleep(2)
-    await sts.delete()
-    await msg.reply("Done........")
     os.execl(sys.executable, sys.executable, *sys.argv)
+    await editMessage(reply, "Done........")
