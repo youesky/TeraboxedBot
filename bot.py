@@ -33,6 +33,7 @@ class Bot(Client):
         )
 
     async def start(self):
+        logger.info("Creating client from BOT_TOKEN")
         await super().start()
         me = await self.get_me()
         temp.U_NAME = me.username
@@ -54,7 +55,8 @@ class Bot(Client):
             await app.setup()
             await web.TCPSite(app, "0.0.0.0", 8080).start()
             logger.info("Web Response Is Running......🕸️")
-   
+        logger.info(f"Teraboxed Bot [@{me.username}] Started!")
+
     async def stop(self, *args):
         await super().stop()
         me = await self.get_me()

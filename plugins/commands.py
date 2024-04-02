@@ -18,6 +18,7 @@ async def start(client, message):
 @Client.on_message(regex(pattern=r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"))
 async def link_handler(client, message):
     start_time = time.time()
+    print("heyy")
     urls = extract_links(message.text or message.caption)
     if not urls: return sendMessage(message, "⚠️ No valid URLs found!")
     terabox_urls = [url for url in urls if await check_url_patterns_async(url)]
