@@ -1,4 +1,4 @@
-https://github.com/TGExplore/pyrogram.git
+git+https://github.com/MKN-BOTZ/pyrogram
 tgcrypto
 aiohttp
 requests
