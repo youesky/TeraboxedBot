@@ -10,7 +10,7 @@ from utils import temp, __repo__, __license__, __copyright__, __version__
 
 
 # Get logging configurations
-loggingconfig.fileConfig("logging.conf")
+logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("cinemagoer").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
