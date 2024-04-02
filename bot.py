@@ -5,9 +5,8 @@ import logging.config
 
 from pyrogram import Client, enums
 
-from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK
+from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK, SET_COMMANDS
 from utils import temp, __repo__, __license__, __copyright__, __version__
-from plugins.helper.ext_utils.bot_utils import set_commands
 
 logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.INFO)
@@ -58,6 +57,12 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
+async def set_commands(client):
+    if not SET_COMMANDS: return
+    try: await client.set_bot_commands([BotCommand("start", "Alive!?"), BotCommand("restart", "[Admins Only]")])
+    logger.info('Bot Commands have been Set & Updated')
+    except Exception as e: logger.error(e)
+        
 async def start_bot():
     await set_commands(Bot)
     await Bot().start()
