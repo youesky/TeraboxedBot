@@ -62,10 +62,10 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     <details>
     <summary><b>Variables</b></summary>
       
-    Required Variables
+        <br>Required Variables</br>
     * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
         
-    Optional Variables
+        <b>Optional Variables</br>
     * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
     * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
     * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
