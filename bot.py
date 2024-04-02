@@ -40,14 +40,14 @@ class Bot(Client):
         self.name = me.first_name
         self.mention = me.mention
         self.username = me.username
-        self.log_channel = LOG_CHANNEL
+        self.admins = ADMINS
         self.uptime = time.time()
         curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
         logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
-        try: await self.send_message(LOG_CHANNEL, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
-        except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To LOG_CHANNEL \n{e}")
+        try: await self.send_message(ADMINS, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
+        except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
             await app.setup()
