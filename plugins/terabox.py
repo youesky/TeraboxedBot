@@ -5,9 +5,9 @@ from requests import Session
 from http.cookiejar import MozillaCookieJar
 from urllib.parse import urlparse, parse_qs
 
-from .bot import logger
-from bot.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time, new_task
-from bot.helper.themes import BotTheme
+from bot import logger
+from plugins.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time, new_task
+from plugins.helper.themes import BotTheme
 
 def terabox(url):
     if not path.isfile('cookies.txt'):

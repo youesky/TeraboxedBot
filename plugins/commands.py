@@ -2,11 +2,11 @@ import time, asyncio
 from pyrogram import Client, filters
 from pyrogram.filters import command, regex
 
-from bot.helper.telegram_helper.message_utils import sendMessage, editMessage
-from bot.helper.telegram_helper.filters import CustomFilters
-from bot.helper.telegram_helper.button_build import ButtonMaker
-from bot.helper.themes import BotTheme
-from bot.plugins.terabox import format_message
+from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
+from plugins.helper.telegram_helper.filters import CustomFilters
+from plugins.helper.telegram_helper.button_build import ButtonMaker
+from plugins.helper.themes import BotTheme
+from plugins.terabox import format_message
 
 @Client.on_message(command("start"))
 async def start(client, message):
