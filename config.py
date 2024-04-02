@@ -7,4 +7,4 @@ OWNER_ID = int(getenv("OWNER_ID", "1034599258"))
 
 LOG_CHANNEL = getenv("LOG_CHANNEL", "1034599258")
 LOG_MSG = "{} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ....✨\n\n🗓️ Dᴀᴛᴇ : {}\n⏰ Tɪᴍᴇ : {}\n\n🖥️ Rᴇᴘᴏ: {}\n🉐 Vᴇʀsɪᴏɴ: {}\n🧾 Lɪᴄᴇɴꜱᴇ: {}\n©️ Cᴏᴩʏʀɪɢʜᴛ: {}"
-WEBHOOK = bool(getenv("WEBHOOK", True)) # for web support on/off
+WEBHOOK = bool(getenv("WEBHOOK", False)) # for web support on/off
