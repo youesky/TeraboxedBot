@@ -4,6 +4,7 @@ import logging, asyncio
 import logging.config
 
 from pyrogram import Client, enums
+from pyrogram.types import BotCommand
 
 from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK, SET_COMMANDS
 from utils import temp, __repo__, __license__, __copyright__, __version__
