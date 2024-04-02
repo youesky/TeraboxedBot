@@ -7,7 +7,7 @@ from plugins.helper.telegram_helper.message_utils import sendMessage, editMessag
 
 
 @Client.on_message(command("restart") & user(ADMINS))
-async def restart_bot(client, message):
+async def restart(client, message):
     reply = await sendMessage(message, "Restarting........")
     await asyncio.sleep(2)
     await editMessage(reply, "Done........")
