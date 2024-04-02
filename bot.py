@@ -26,11 +26,12 @@ class Bot(Client):
             bot_token=BOT_TOKEN,
             workers=1000,
             plugins={"root": "plugins"},
-            sleep_threshold=10
+            sleep_threshold=10,
+            parse_mode=enums.ParseMode.HTML
         )
 
     async def start(self):
-        logging.info("Creating client from BOT_TOKEN")
+        logger.info("Creating client from BOT_TOKEN")
         await super().start()
         me = await self.get_me()
         temp.U_NAME = me.username
@@ -44,19 +45,20 @@ class Bot(Client):
         curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
-        logging.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
+        logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
         try: await self.send_message(LOG_CHANNEL, LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
-        except Exception as e: logging.warning(f"Bot Isn't Able To Send Message To LOG_CHANNEL \n{e}")
+        except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To LOG_CHANNEL \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
             await app.setup()
             await web.TCPSite(app, "0.0.0.0", 8080).start()
-            logging.info("Web Response Is Running......🕸️")
-        logging.info(f"Teraboxed Bot [@{me.username}] Started!")
+            logger.info("Web Response Is Running......🕸️")
+        logger.info(f"Teraboxed Bot [@{me.username}] Started!")
 
     async def stop(self, *args):
         await super().stop()
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-Bot().run()
+if __name__ == '__main__':
+    Bot().run()
