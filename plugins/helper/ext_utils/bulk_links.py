@@ -1,12 +1,12 @@
 import asyncio
 
 from re import findall, search
-# from bot import logger
+from bot import logger
 
 def extract_links(message):
     try: return findall(r'https?://\S+', message)
     except Exception as e:
-        # logger.error(f"Error extracting links: {e}")
+        logger.error(f"Error extracting links: {e}")
         return []
 
 async def check_url_patterns_async(url):
