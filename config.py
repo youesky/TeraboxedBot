@@ -13,7 +13,7 @@ IMAGES = []
 
 # ---------- DON'T TOUCH THIS ---------- #
 LOG_MSG = "{} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ....✨\n\n🗓️ Dᴀᴛᴇ : {}\n⏰ Tɪᴍᴇ : {}\n\n🖥️ Rᴇᴘᴏ: {}\n🉐 Vᴇʀsɪᴏɴ: {}\n🧾 Lɪᴄᴇɴꜱᴇ: {}\n©️ Cᴏᴩʏʀɪɢʜᴛ: {}"
-DEFUALT_IMAGES = "https://te.legra.ph/file/50948ffe9bae7ae144fdc.jpg https://te.legra.ph/file/6fff8b3db750d6ca79eaf.jpg https://te.legra.ph/file/c9a03c5fa076aa6f5d6ed.jpg https://te.legra.ph/file/cbb22ce0a7e7d22d5fabe.jpg https://te.legra.ph/file/e1956382d55e05ed7840c.jpg https://te.legra.ph/file/5f55c2f2f12f71deb3476.jpg https://te.legra.ph/file/acc3af2d3ada7a9d7c0ac.jpg https://te.legra.ph/file/3d941e162755166cc6f16.jpg https://te.legra.ph/file/2782b15b446801060949c.jpg"
+DEFUALT_IMAGES = "https://te.legra.ph/file/fd38c3b6475dee45b3d0d.jpg https://te.legra.ph/file/dbc75abadc755300b1db7.jpg https://te.legra.ph/file/6452a9a983edc6b075947.jpg https://te.legra.ph/file/876dfbb376024367d75c5.jpg https://te.legra.ph/file/4ba2cf84d24b45e4c5fce.jpg https://te.legra.ph/file/7685ff7c159023a91cc64.jpg https://te.legra.ph/file/fb0a1dd462207aee52dee.jpg https://te.legra.ph/file/4f1ae4b2c4fdaef2c46d4.jpg https://te.legra.ph/file/8c60e09d8221bbbe9cb34.jpg https://te.legra.ph/file/d1d2dac213ee53e77b80e.jpg"
 
 for admin in getenv("ADMINS", "1034599258").split():
     ADMINS.append(int(admin))
