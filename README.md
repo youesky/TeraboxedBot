@@ -62,7 +62,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     <details>
     <summary><b>Variables</b></summary>
       
-      <br><b>Required Variables</b>
+          <b>Required Variables</b>
     * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
         
       <b>Optional Variables</b>
@@ -91,6 +91,6 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
 ## Disclaimer
 
 [![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)<br>
-This bot is intended for educational and personal use only, upholding the highest standards of ethical use.<br>
-Licensed under [GNU AGPL 2.0.](https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
-Selling The Codes To Other People For Money Is *Strictly Prohibited*.
+<b>Licensed under [GNU AGPL 2.0.]</b>(https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
+<b>This bot is intended for educational and personal use only, upholding the highest standards of ethical use.</b><br>
+<b>Selling The Codes To Other People For Money Is Strictly Prohibited.</b>
