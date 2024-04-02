@@ -7,6 +7,7 @@ The *TeraboxedBot* is designed to help users get direct download links from Tera
 
 ---
 
-## *Under Development**
+## **Under Development**
 
----
+## **Owner**
+t.me/ebiza and t.me/rabeeh_rc
