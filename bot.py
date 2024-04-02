@@ -16,9 +16,6 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("cinemagoer").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
-loop = asyncio.get_event_loop_policy().get_event_loop()
-
-
 class Bot(Client):
 
     def __init__(self):
@@ -63,5 +60,7 @@ class Bot(Client):
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
 if __name__ == "__main__":
-    #loop.run_until_complete(Bot())
-    Bot().run()
+    loop = asyncio.get_event_loop()
+    bot = Bot()
+    bot.run()
+    loop.run_forever()
