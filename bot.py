@@ -66,8 +66,8 @@ async def set_commands(client):
     except Exception as e: logger.error(e)
         
 async def start_bot():
-    await set_commands(Bot)
     await Bot().start()
+    await set_commands(Bot)
 
 if __name__ == "__main__":
     asyncio.run(start_bot())
