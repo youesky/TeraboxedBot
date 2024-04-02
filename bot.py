@@ -24,10 +24,9 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=200,
+            workers=1000,
             plugins={"root": "plugins"},
-            sleep_threshold=10,
-            parse_mode=enums.ParseMode.HTML
+            sleep_threshold=10
         )
 
     async def start(self):
