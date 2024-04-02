@@ -8,4 +8,4 @@ RUN pip install -U pip && pip install -U -r requirements.txt
 WORKDIR /app
 
 COPY . .
-CMD ["python", "bot.py"]
+CMD ["python3", "bot.py"]
