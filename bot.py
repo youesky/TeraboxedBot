@@ -60,4 +60,6 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-Bot().run()
+if __name__ == "__main__":
+    bot = Bot()
+    asyncio.run(bot.run())
