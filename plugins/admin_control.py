@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from config import OWNER_ID
 
 
-@Client.on_message(filters.command("restart") & filters.user(OWNER_ID))
+@Bot.on_message(filters.command("restart") & filters.user(OWNER_ID))
 async def restart_bot(bot, msg):
     sts = await msg.reply("Rᴇꜱᴛᴀᴛɪɴɢ........")
     await asyncio.sleep(2)
