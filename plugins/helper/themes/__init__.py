@@ -2,8 +2,8 @@
 from os import listdir
 from importlib import import_module
 from random import choice as rchoice
-from .bot import logger
-from bot.helper.themes import ebiza_candy
+from bot import logger
+from plugins.helper.themes import ebiza_candy
 
 AVL_THEMES = {"candy": ebiza_candy}
 for theme in listdir('bot/helper/themes'):
