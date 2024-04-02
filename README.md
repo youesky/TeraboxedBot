@@ -62,7 +62,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     <details>
     <summary><b>Variables</b></summary>
       
-      <b>Required Variables</b>
+      <br><b>Required Variables</b>
     * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
         
       <b>Optional Variables</b>
