@@ -11,11 +11,12 @@ from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
 
-# Get logging configurations
 logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("cinemagoer").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
+
+loop = asyncio.get_event_loop_policy().get_event_loop()
 
 
 class Bot(Client):
@@ -59,6 +60,7 @@ class Bot(Client):
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
         
 if __name__ == "__main__":
+    #loop.run_until_complete(Bot())
     bot = Bot()
     if not bot.is_initialized:
         bot.run()

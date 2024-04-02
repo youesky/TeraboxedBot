@@ -6,7 +6,7 @@ from http.cookiejar import MozillaCookieJar
 from urllib.parse import urlparse, parse_qs
 
 from bot import logger
-from plugins.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time, new_task
+from plugins.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from plugins.helper.themes import BotTheme
 
 def terabox(url):
