@@ -4,7 +4,7 @@ import logging, asyncio
 import logging.config
 
 from aiohttp import web
-from pyrogram import Client
+from pyrogram import Client, enums
 
 from plugins import web_server 
 from config import API_ID, API_HASH, BOT_TOKEN, LOG_CHANNEL, LOG_MSG, WEBHOOK
@@ -28,7 +28,8 @@ class Bot(Client):
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
             workers=1000,
-            plugins={"root": "plugins"}
+            plugins={"root": "plugins"},
+            parse_mode=enums.ParseMode.HTML
         )
 
     async def start(self):
