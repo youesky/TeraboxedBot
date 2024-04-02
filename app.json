@@ -36,11 +36,6 @@
         "IMAGES": {
             "description": "Add some telegraph link of pictures. Separate multiple Links by space.",
             "required": false
-        },
-        "SET_COMMANDS": {
-            "description": "Set bot command automatically. Bool",
-            "value": "True",
-            "required": false
         }
     },
     "buildpacks": [

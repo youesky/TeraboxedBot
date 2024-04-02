@@ -4,9 +4,8 @@ import logging, asyncio
 import logging.config
 
 from pyrogram import Client, enums
-from pyrogram.types import BotCommand
 
-from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK, SET_COMMANDS
+from config import API_ID, API_HASH, BOT_TOKEN, ADMINS, LOG_MSG, WEBHOOK
 from utils import temp, __repo__, __license__, __copyright__, __version__
 
 logging.config.fileConfig("logging.conf")
@@ -22,9 +21,8 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=200,
+            workers=1000,
             plugins={"root": "plugins"},
-            sleep_threshold=10,
             parse_mode=enums.ParseMode.HTML
         )
 
@@ -58,16 +56,8 @@ class Bot(Client):
         me = await self.get_me()
         logger.info(f"{me.first_name} is_...  ♻️Restarting...")
 
-async def set_commands(client):
-    if not SET_COMMANDS: return
-    try:
-        commands = [BotCommand("start", "Alive!?"), BotCommand("restart", "[Admins]")]; await client.set_bot_commands(commands)
-        fetch_commands = await app.get_bot_commands(); logger.info(f'Bot Commands have been Set & Updated {fetch_commands}')
-    except Exception as e: logger.error(e)
-        
 async def start_bot():
     await Bot().start()
-    await set_commands(Bot)
 
 if __name__ == "__main__":
     asyncio.run(start_bot())
