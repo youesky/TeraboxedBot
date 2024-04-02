@@ -1,3 +1,5 @@
+import asyncio
+
 from re import findall, search
 from bot import logger
 
