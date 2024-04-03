@@ -2,7 +2,7 @@
 from os import listdir
 from importlib import import_module
 from random import choice as rchoice
-from main import logger
+from logger import logger
 from plugins.helper.themes import ebiza_candy
 
 AVL_THEMES = {"candy": ebiza_candy}

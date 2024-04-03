@@ -1,4 +1,3 @@
-import logging, logging.config
 import pyrogram
 from pyrogram import Client,filters
 from pyrogram.types import InlineKeyboardMarkup,InlineKeyboardButton
@@ -15,11 +14,6 @@ from time import time
 from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
 from plugins.helper.telegram_helper.button_build import ButtonMaker
 from plugins.helper.themes import BotTheme
-
-logging.config.fileConfig("logging.conf")
-logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("cinemagoer").setLevel(logging.ERROR)
-logger = logging.getLogger(__name__)
 
 
 # bot
