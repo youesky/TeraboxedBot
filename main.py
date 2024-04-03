@@ -84,7 +84,7 @@ def loopthread(message,otherss=False):
     
     if otherss:
         try:
-            app.send_photo(message.chat.id, message.photo.file_id, f'__{links}__', reply_to_message_id=message.id)
+            app.send_photo(message.chat.id, message.photo.file_id, , f'{ele}**{took}**', reply_to_message_id=message.id)
             app.delete_messages(message.chat.id,[msg.id])
             return
         except: pass
