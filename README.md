@@ -1,94 +1,56 @@
-# TeraboxedBot ⚡
+# Link-Bypasser-Bot
 
-The TeraboxedBot is designed to help users get direct download links from TeraBox files on Telegram.
-
-![icon.jpg](https://te.legra.ph/file/7680309a045c8063a08c7.jpg)
-
-
-### **Features:**
-
-1. **Start Command:**
-   - `/start`: Initiates communication with the bot, presenting users with a refined introduction and clear usage instructions.
-
-2. **Link Handling:**
-   - Automatically detects TeraBox links in messages, ensuring a polished user experience.
-   - Validates URLs, fetching direct download links with a commitment to precision.
-   - Presents file details such as title, size, and download link in a structured and professional manner.
-
-<details>
-<summary>How To Use</summary>
-
-1. Start a Chat:
-   * Initiate a private chat with the bot, ensuring a discreet and personalized experience.
-
-2. Send TeraBox Links:
-   * Share TeraBox links with the bot, guaranteeing a streamlined interaction.
-
-3. Receive Download Links:
-   * Experience the bot's efficiency as it provides direct download links and comprehensive file information.
-
-</details>
+a Telegram Bot (with Site) that can Bypass Ad Links, Generate Direct Links and Jump Paywalls. see the Bot in Action [@BypassLinkBot](https://t.me/BypassLinkBot) or try it on [Replit](https://replit.com/@bipinkrish/Link-Bypasser#app.py)
 
 ---
 
-## Deployment
-Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
-1. Star and fork this repository.
-2. Deploy:
+## Required Variables
 
-    <details>
-    <summary>Deploy to Heroku</summary>
-    
-    <br>[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youesky/TeraboxedBot)
-    </details>
-    
-    <details>
-    <summary>Deploy to Koyeb</summary>
-    
-    <br>[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/youesky/TeraboxedBot&env[WEBHOOK]=True&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[ADMINS]&env[IMAGES]&run_command=python%20bot.py&branch=main&name=TeraboxedBot)              
-    </details>
-    
-    <details>
-    <summary>Deploy to Railway</summary>
-    
-    <br>[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/_l3iQY?referralCode=IEUhZ-)
-    </details>
+- `TOKEN` Bot Token from @BotFather
+- `HASH` API Hash from my.telegram.org
+- `ID` API ID from my.telegram.org
 
-3. In environment variable section, add the following variables:
+## Optional Variables 
+you can also set these in `config.json` file
 
-    <details>
-    <summary>Variables</summary>
-      
-      <b>Required Variable</b>
-    * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
-    * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
+- `CRYPT` GDTot Crypt If you don't know how to get Crypt then [Learn Here](https://www.youtube.com/watch?v=EfZ29CotRSU)
+- `XSRF_TOKEN` and `Laravel_Session` XSRF Token and Laravel Session cookies! If you don't know how to get then then watch [this Video](https://www.youtube.com/watch?v=EfZ29CotRSU) (for GDTOT) and do the same for sharer.pw
+- `DRIVEFIRE_CRYPT` Drivefire Crypt
+- `KOLOP_CRYPT`  Kolop Crypt!
+- `HUBDRIVE_CRYPT` Hubdrive Crypt
+- `KATDRIVE_CRYPT` Katdrive Crypt
+- `UPTOBOX_TOKEN` Uptobox Token
+- `TERA_COOKIE` Terabox Cookie (only `ndus` value) (see [Help](#help))
+- `CLOUDFLARE` Use `cf_clearance` cookie from and Cloudflare protected sites
+- `PORT` Port to run the Bot Site on (default is 5000)
+---
+## Deploy on Heroku
+**BEFORE YOU DEPLOY ON HEROKU, YOU SHOULD FORK THE REPO AND CHANGE ITS NAME TO ANYTHING ELSE**<br>
 
-      <b>Optional Variables</b>
-    * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
-    * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-    * `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
-    * `WEBHOOK`: True/False if your server is web support required? the value is True else False
-    
-    </details>
-    
-4. Click on Deploy.
-5. Restart the app and enjoy.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bipinkrish/Link-Bypasser-Bot)</br>
+
+## Commands
+
+```
+/start - Welcome Message
+/help - List of All Supported Sites
+
+```
 
 ---
+## Supported Sites
+To see the list of supported sites see [texts.py](https://github.com/bipinkrish/Link-Bypasser-Bot/blob/main/texts.py) file
+---
+## Help
+* If you are deploying on VPS, watch videos on how to set/export Environment Variables. OR you can set these in `config.json` file
+* Terabox Cookie
 
-### Telagram Support
+    1. Open any Browser
+    2. Make sure you are logged in with a Terbox account
+    3. Press `f12` to open DEV tools and click Network tab
+    4. Open any Terbox video link and open Cookies tab
+    5. Copy value of `ndus`
+   
+   <br>
 
-* [![EBIZA SUPPORT](https://img.shields.io/static/v1?label=EBIZA&message=SUPPORT&color=critical)](https://t.me/EbizaSupport)
-
-### Credit 💞
-
-* [![EBIZA](https://img.shields.io/static/v1?label=OWNER&message=EBIZA&color=yellow)](https://t.me/ebiza)
-
-* [![BASE REPO](https://img.shields.io/static/v1?label=BASE&message=REPO&color=green)](https://github.com/bakamono12/Terabox-Bypass)
-
-### Disclaimer
-
-[![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)<br>
-<b>Licensed under <a href="https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE">GNU AGPL 2.0.</a></b>
-<b>This bot is intended for educational and personal use only, upholding the highest standards of ethical use.</b><br>
-<b>Selling The Codes To Other People For Money Is Strictly Prohibited.</b>
+   ![](https://i.ibb.co/hHBZM5m/Screenshot-113.png)

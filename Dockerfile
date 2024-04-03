@@ -1,11 +1,9 @@
-FROM python:3.10
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+FROM python:3.9
 
-RUN cd /
-RUN pip install -U pip && pip install -U -r requirements.txt
 WORKDIR /app
 
-COPY . .
-CMD ["python3", "bot.py"]
+COPY requirements.txt /app/
+RUN pip3 install -r requirements.txt
+COPY . /app
+
+CMD gunicorn app:app & python3 main.py

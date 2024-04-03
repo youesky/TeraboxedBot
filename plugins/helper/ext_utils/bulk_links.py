@@ -1,7 +1,8 @@
 import asyncio
 
 from re import findall, search
-from bot import logger
+from logger import logger
+
 
 def extract_links(message):
     try: return findall(r'https?://\S+', message)
