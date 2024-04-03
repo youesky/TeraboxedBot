@@ -3,7 +3,9 @@ from json import loads
 from math import floor, pow
 from re import findall, match, search, sub
 from time import sleep
-from urllib.parse import quote, unquote, urlparse
+from urllib.parse import quote, unquote, urlparse, parse_qs
+from http.cookiejar import MozillaCookieJar
+from requests import Session
 from uuid import uuid4
 
 from bs4 import BeautifulSoup
@@ -12,7 +14,11 @@ from lxml import etree
 from requests import get, session
 
 from json import load
-from os import environ
+from os import environ, path
+
+from plugins.helper.ext_utils.exceptions import DirectDownloadLinkException
+
+
 
 with open('config.json', 'r') as f: DATA = load(f)
 def getenv(var): return environ.get(var) or DATA.get(var, None)
@@ -558,51 +564,89 @@ def uploadee(url: str) -> str:
 			f"ERROR: Failed to acquire download URL from upload.ee for : {url}")
 
 
-def terabox(url) -> str:
-	sess = session()
-	while True:
-		try: 
-			res = sess.get(url)
-			print("connected")
-			break
-		except: print("retrying")
-	url = res.url
+def terabox(url):
+    if not path.isfile('plugins/helper/mirror_utils/download_utils/cookies.txt'):
+        raise DirectDownloadLinkException("cookies.txt not found")
+    try:
+        jar = MozillaCookieJar('plugins/helper/mirror_utils/download_utils/cookies.txt')
+        jar.load()
+    except Exception as e:
+        raise DirectDownloadLinkException(f"ERROR: {e.__class__.__name__}") from e
+    cookies = {}
+    for cookie in jar:
+        cookies[cookie.name] = cookie.value
+    details = {'contents':[], 'title': '', 'total_size': 0}
+    details["header"] = ' '.join(f'{key}: {value}' for key, value in cookies.items())
 
-	key = url.split('?surl=')[-1]
-	url = f'http://www.terabox.com/wap/share/filelist?surl={key}'
-	sess.cookies.update(TERA_COOKIE)
+    def __fetch_links(session, dir_='', folderPath=''):
+        params = {
+            'app_id': '250528',
+            'jsToken': jsToken,
+            'shorturl': shortUrl
+            }
+        if dir_:
+            params['dir'] = dir_
+        else:
+            params['root'] = '1'
+        try:
+            _json = session.get("https://www.1024tera.com/share/list", params=params, cookies=cookies).json()
+        except Exception as e:
+            raise DirectDownloadLinkException(f'ERROR: {e.__class__.__name__}')
+        if _json['errno'] not in [0, '0']:
+            if 'errmsg' in _json:
+                raise DirectDownloadLinkException(f"ERROR: {_json['errmsg']}")
+            else:
+                raise DirectDownloadLinkException('ERROR: Something went wrong!')
 
-	while True:
-		try: 
-			res = sess.get(url)
-			print("connected")
-			break
-		except Exception as e: print("retrying")
-
-	key = res.url.split('?surl=')[-1]
-	soup = BeautifulSoup(res.content, 'lxml')
-	jsToken = None
-
-	for fs in soup.find_all('script'):
-		fstring = fs.string
-		if fstring and fstring.startswith('try {eval(decodeURIComponent'):
-			jsToken = fstring.split('%22')[1]
-
-	while True:
-		try:
-			res = sess.get(f'https://www.terabox.com/share/list?app_id=250528&jsToken={jsToken}&shorturl={key}&root=1')
-			print("connected")
-			break
-		except: print("retrying")
-	result = res.json()
-
-	if result['errno'] != 0: return f"ERROR: '{result['errmsg']}' Check cookies"
-	result = result['list']
-	if len(result) > 1: return "ERROR: Can't download mutiple files"
-	result = result[0]
-
-	if result['isdir'] != '0':return "ERROR: Can't download folder"
-	return result.get('dlink',"Error")
+        if "list" not in _json:
+            return
+        contents = _json["list"]
+        for content in contents:
+            if content['isdir'] in ['1', 1]:
+                if not folderPath:
+                    if not details['title']:
+                        details['title'] = content['server_filename']
+                        newFolderPath = path.join(details['title'])
+                    else:
+                        newFolderPath = path.join(details['title'], content['server_filename'])
+                else:
+                    newFolderPath = path.join(folderPath, content['server_filename'])
+                __fetch_links(session, content['path'], newFolderPath)
+            else:
+                if not folderPath:
+                    if not details['title']:
+                        details['title'] = content['server_filename']
+                    folderPath = details['title']
+                item = {
+                    'url': content['dlink'],
+                    'filename': content['server_filename'],
+                    'path' : path.join(folderPath),
+                }
+                if 'size' in content:
+                    size = content["size"]
+                    if isinstance(size, str) and size.isdigit():
+                        size = float(size)
+                    details['total_size'] += size
+                details['contents'].append(item)
+    with Session() as session:
+        try:
+            _res = session.get(url, cookies=cookies)
+        except Exception as e:
+            raise DirectDownloadLinkException(f'ERROR: {e.__class__.__name__}')
+        if jsToken := findall(r'window\.jsToken.*%22(.*)%22', _res.text):
+            jsToken = jsToken[0]
+        else:
+            raise DirectDownloadLinkException('ERROR: jsToken not found!.')
+        shortUrl = parse_qs(urlparse(_res.url).query).get('surl')
+        if not shortUrl:
+            raise DirectDownloadLinkException("ERROR: Could not find surl")
+        try:
+            __fetch_links(session)
+        except Exception as e:
+            raise DirectDownloadLinkException(e)
+    if len(details['contents']) == 1:
+        return details['contents'][0]['url']
+    return details
 
 
 def filepress(url):
