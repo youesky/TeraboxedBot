@@ -29,7 +29,6 @@ class Bot(Client):
         logger.info("Creating client from BOT_TOKEN")
         await super().start()
         me = await self.get_me()
-        logger.warning(me)
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.id = me.id

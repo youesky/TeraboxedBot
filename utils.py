@@ -5,4 +5,4 @@ class temp(object):
 __repo__ = "https://github.com/youesky/TeraboxedBot"
 __version__ = "TeraboxedBot ᴠ1.1.0"
 __license__ = "GNU GENERAL PUBLIC LICENSE V2"
-__copyright__ = "Copyright (C) 2024-present Ebiza <https://github.com/youesky>"
+__copyright__ = "Copyright (C) 2024-present @ebiza - <a href='https://github.com/youesky'>youesky</a>"
