@@ -15,8 +15,9 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
    - Validates URLs, fetching direct download links with a commitment to precision.
    - Presents file details such as title, size, and download link in a structured and professional manner.
 
-<br><details>
+<details>
 <summary>How To Use</summary>
+
 1. Start a Chat:
    * Initiate a private chat with the bot, ensuring a discreet and personalized experience.
 
@@ -67,6 +68,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
     * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
     * `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
     * `WEBHOOK`: True/False if your server is web support required? the value is True else False
+    
     </details>
     
 4. Click on Deploy.
