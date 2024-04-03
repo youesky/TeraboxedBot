@@ -17,7 +17,7 @@ from json import load
 from os import environ, path
 
 from plugins.helper.ext_utils.exceptions import DirectDownloadLinkException
-
+from plugins.helper.ext_utils.bot_utils import get_readable_file_size
 
 
 with open('config.json', 'r') as f: DATA = load(f)
@@ -644,9 +644,14 @@ def terabox(url):
             __fetch_links(session)
         except Exception as e:
             raise DirectDownloadLinkException(e)
-    if len(details['contents']) == 1:
+    '''if len(details['contents']) == 1:
         return details['contents'][0]['url']
-    return details
+    return details'''
+    
+    file_name = f"[{details['title']}]({url})"
+    file_size = get_readable_file_size(details['total_size'])
+    return f"\n┎ Title: {file_name}\n┠ Size<: `{file_size}`\n┖ Link: [Link]({details['contents'][0]['url']})\n"
+
 
 
 def filepress(url):
