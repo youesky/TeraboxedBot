@@ -1,4 +1,4 @@
-import pyrogram
+import pyrogram, asyncio
 from pyrogram import Client,filters
 from pyrogram.types import InlineKeyboardMarkup,InlineKeyboardButton
 from os import environ, remove
@@ -118,7 +118,7 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
     buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
     buttons.ubutton(BotTheme('ST_BN2_NAME'), BotTheme('ST_BN2_URL'))
     reply_markup = buttons.build_menu(2)
-    sendMessage(message, BotTheme('ST_MSG'), reply_markup, photo='IMAGES')
+    await sendMessage(message, BotTheme('ST_MSG'), reply_markup, photo='IMAGES')
 
 
 # help command
