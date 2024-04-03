@@ -26,7 +26,7 @@ class Bot(Client):
         )
 
     async def start(self):
-        logger.info("Creating client from BOT_TOKEN")
+        logger.warning("Creating client from BOT_TOKEN")
         await super().start()
         me = await self.get_me()
         temp.U_NAME = me.username
@@ -42,7 +42,7 @@ class Bot(Client):
         tame = curr.strftime('%I:%M:%S %p')
         logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
         try: await self.send_message(ADMINS[0], LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
-        except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
+        except Exception as e: logger.error(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
             await app.setup()
@@ -52,8 +52,7 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        #me = await self.get_me()
-        logger.info(f"{temp.B_NAME} is_...  ♻️Restarting...")
+        logger.info(f"♻️Restarting...")
 
 if __name__ == '__main__':
     app = Bot()
