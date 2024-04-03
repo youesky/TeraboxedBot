@@ -25,9 +25,6 @@ def getenv(var): return environ.get(var) or DATA.get(var, None)
 
 
 UPTOBOX_TOKEN = getenv("UPTOBOX_TOKEN")
-ndus = getenv("TERA_COOKIE")
-if ndus is None: TERA_COOKIE = None
-else: TERA_COOKIE = {"ndus": ndus}
 
 
 ddllist = ['1drv.ms','1fichier.com','4funbox','akmfiles','anonfiles.com','antfiles.com','bayfiles.com','disk.yandex.com',

@@ -20,7 +20,6 @@ you can also set these in `config.json` file
 - `HUBDRIVE_CRYPT` Hubdrive Crypt
 - `KATDRIVE_CRYPT` Katdrive Crypt
 - `UPTOBOX_TOKEN` Uptobox Token
-- `TERA_COOKIE` Terabox Cookie (only `ndus` value) (see [Help](#help))
 - `CLOUDFLARE` Use `cf_clearance` cookie from and Cloudflare protected sites
 - `PORT` Port to run the Bot Site on (default is 5000)
 ---
@@ -43,14 +42,3 @@ To see the list of supported sites see [texts.py](https://github.com/bipinkrish/
 ---
 ## Help
 * If you are deploying on VPS, watch videos on how to set/export Environment Variables. OR you can set these in `config.json` file
-* Terabox Cookie
-
-    1. Open any Browser
-    2. Make sure you are logged in with a Terbox account
-    3. Press `f12` to open DEV tools and click Network tab
-    4. Open any Terbox video link and open Cookies tab
-    5. Copy value of `ndus`
-   
-   <br>
-
-   ![](https://i.ibb.co/hHBZM5m/Screenshot-113.png)

@@ -22,10 +22,6 @@
       "description": "Your bot token from @BotFather",
       "required": true
     },
-    "TERA_COOKIE": {
-      "description": "Terabox Cookie (only ndus value)",
-      "required": false
-    },
     "CRYPT": {
       "description": "GDTot Crypt",
       "required": false
