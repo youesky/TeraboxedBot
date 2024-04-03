@@ -52,8 +52,8 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        me = await self.get_me()
-        logger.info(f"{me.first_name} is_...  ♻️Restarting...")
+        #me = await self.get_me()
+        logger.info(f"{temp.B_NAME} is_...  ♻️Restarting...")
 
 if __name__ == '__main__':
     app = Bot()
