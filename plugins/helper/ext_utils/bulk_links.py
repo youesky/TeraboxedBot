@@ -1,7 +1,7 @@
 import asyncio
 
 from re import findall, search
-from logger import logger
+from main import logger
 
 
 def extract_links(message):

@@ -1,3 +1,4 @@
+import logging, logging.config
 import pyrogram
 from pyrogram import Client,filters
 from pyrogram.types import InlineKeyboardMarkup,InlineKeyboardButton
@@ -10,6 +11,15 @@ from texts import HELP_TEXT
 import bypasser
 import freewall
 from time import time
+
+from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
+from plugins.helper.telegram_helper.button_build import ButtonMaker
+from plugins.helper.themes import BotTheme
+
+logging.config.fileConfig("logging.conf")
+logging.getLogger().setLevel(logging.INFO)
+logging.getLogger("cinemagoer").setLevel(logging.ERROR)
+logger = logging.getLogger(__name__)
 
 
 # bot
@@ -110,11 +120,11 @@ def loopthread(message,otherss=False):
 # start command
 @app.on_message(filters.command(["start"]))
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-    app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, i am Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to Read More__",
-    reply_markup=InlineKeyboardMarkup([
-        [ InlineKeyboardButton("🌐 Source Code", url="https://github.com/bipinkrish/Link-Bypasser-Bot")],
-        [ InlineKeyboardButton("Replit", url="https://replit.com/@bipinkrish/Link-Bypasser#app.py") ]]), 
-        reply_to_message_id=message.id)
+    buttons = ButtonMaker()
+    buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
+    buttons.ubutton(BotTheme('ST_BN2_NAME'), BotTheme('ST_BN2_URL'))
+    reply_markup = buttons.build_menu(2)
+    await sendMessage(message, BotTheme('ST_MSG'), reply_markup, photo='IMAGES')
 
 
 # help command
