@@ -15,15 +15,15 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
    - Validates URLs, fetching direct download links with a commitment to precision.
    - Presents file details such as title, size, and download link in a structured and professional manner.
 
-<details>
+<br><details>
 <summary>How To Use</summary>
-<b>1. Start a Chat:</b>
+1. Start a Chat:
    * Initiate a private chat with the bot, ensuring a discreet and personalized experience.
 
-<b>2. Send TeraBox Links:</b>
+2. Send TeraBox Links:
    * Share TeraBox links with the bot, guaranteeing a streamlined interaction.
 
-<b>3. Receive Download Links:</b>
+3. Receive Download Links:
    * Experience the bot's efficiency as it provides direct download links and comprehensive file information.
 
 </details>
