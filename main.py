@@ -1,4 +1,4 @@
-import pyrogram, asyncio
+import pyrogram
 from pyrogram import Client,filters
 from pyrogram.types import InlineKeyboardMarkup,InlineKeyboardButton
 from os import environ, remove
@@ -10,10 +10,6 @@ from texts import HELP_TEXT
 import bypasser
 import freewall
 from time import time
-
-from plugins.helper.telegram_helper.message_utils import sendMessage, editMessage
-from plugins.helper.telegram_helper.button_build import ButtonMaker
-from plugins.helper.themes import BotTheme
 
 
 # bot
@@ -113,12 +109,12 @@ def loopthread(message,otherss=False):
 
 # start command
 @app.on_message(filters.command(["start"]))
-async def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-    buttons = ButtonMaker()
-    buttons.ubutton(BotTheme('ST_BN1_NAME'), BotTheme('ST_BN1_URL'))
-    buttons.ubutton(BotTheme('ST_BN2_NAME'), BotTheme('ST_BN2_URL'))
-    reply_markup = buttons.build_menu(2)
-    await sendMessage(message, BotTheme('ST_MSG'), reply_markup, photo='IMAGES')
+def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
+    app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, i am Terabox Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to Read More__",
+    reply_markup=InlineKeyboardMarkup([
+        [ InlineKeyboardButton("🌐 Source Code", url="https://github.com/youesky/TeraboxedBot")],
+        [ InlineKeyboardButton("Updates", url="https://t.me/Teraboxed") ]]), 
+        reply_to_message_id=message.id)
 
 
 # help command
