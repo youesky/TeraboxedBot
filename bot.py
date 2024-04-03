@@ -29,7 +29,7 @@ class Bot(Client):
         logger.info("Creating client from BOT_TOKEN")
         await super().start()
         me = await self.get_me()
-        logger.warning(me)
+        await logger.warning(me)
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.id = me.id
@@ -41,15 +41,15 @@ class Bot(Client):
         curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
-        logger.info(LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__))
-        try: await self.send_message(ADMINS[0], LOG_MSG.format(me.first_name, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
+        await logger.info(LOG_MSG.format(temp.B_NAME, date, tame, __repo__, __version__, __license__, __copyright__))
+        try: await self.send_message(ADMINS[0], LOG_MSG.format(temp.U_NAME, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
         except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
             await app.setup()
             await web.TCPSite(app, "0.0.0.0", 8080).start()
             logger.info("Web Response Is Running......🕸️")
-        logger.info(f"Teraboxed Bot [@{me.username}] Started!")
+        await logger.info(f"Teraboxed Bot [@{temp.U_NAME}] Started!")
 
     async def stop(self, *args):
         await super().stop()
