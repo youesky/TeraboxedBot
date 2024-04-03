@@ -92,7 +92,7 @@ def loopthread(message,otherss=False):
         final = []
         tmp = ""
         for ele in links.split("\n\n"):
-            tmp += ele + "\n"
+            tmp += ele + "\n\n"
             if len(tmp) > 4000:
                 final.append(tmp)
                 tmp = ""
@@ -100,7 +100,7 @@ def loopthread(message,otherss=False):
         app.delete_messages(message.chat.id, msg.id)
         tmsgid = message.id
         for ele in final:
-            tmsg = app.send_message(message.chat.id, f'__{ele}__',reply_to_message_id=tmsgid, disable_web_page_preview=True)
+            tmsg = app.send_message(message.chat.id, f'{ele}',reply_to_message_id=tmsgid, disable_web_page_preview=True)
             tmsgid = tmsg.id
     except Exception as e:
         app.send_message(message.chat.id, f"__Failed to Bypass : {e}__", reply_to_message_id=message.id)

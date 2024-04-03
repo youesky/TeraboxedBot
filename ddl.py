@@ -650,7 +650,7 @@ def terabox(url):
     
     file_name = f"[{details['title']}]({url})"
     file_size = get_readable_file_size(details['total_size'])
-    return f"┎ Title: {file_name}\n┠ Size<: `{file_size}`\n┖ Link: [Link]({details['contents'][0]['url']})"
+    return f"┎ **Title:** {file_name}\n┠ **Size:** `{file_size}`\n┖ **Link:** [Link]({details['contents'][0]['url']})"
 
 
 
