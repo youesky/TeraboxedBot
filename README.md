@@ -1,6 +1,8 @@
-# Link-Bypasser-Bot
+# TeraboxedBot ⚡
 
-a Telegram Bot (with Site) that can Bypass Ad Links, Generate Direct Links and Jump Paywalls. see the Bot in Action [@BypassLinkBot](https://t.me/BypassLinkBot) or try it on [Replit](https://replit.com/@bipinkrish/Link-Bypasser#app.py)
+The TeraboxedBot is designed to help users get direct download links from TeraBox files on Telegram.
+
+![icon.jpg](https://te.legra.ph/file/7680309a045c8063a08c7.jpg)
 
 ---
 
@@ -26,7 +28,8 @@ you can also set these in `config.json` file
 ## Deploy on Heroku
 **BEFORE YOU DEPLOY ON HEROKU, YOU SHOULD STAR AND FORK THE REPO AND CHANGE ITS NAME TO ANYTHING ELSE**<br>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bipinkrish/Link-Bypasser-Bot)</br>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youesky/TeraboxedBot)<br>
+
 
 ## Commands
 
