@@ -55,6 +55,4 @@ class Bot(Client):
         await super().stop()
         logger.info(f"♻️Restarting...")
 
-if __name__ == '__main__':
-    app = Bot()
-    app.run()
+Bot().run()
