@@ -19,13 +19,13 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
 
 <details>
 <summary>How To Use</summary>
-1. **Start a Chat:**
+<br><b>Start a Chat:</b>
    - Initiate a private chat with the bot, ensuring a discreet and personalized experience.
 
-2. **Send TeraBox Links:**
+<b>Send TeraBox Links:</b>
    - Share TeraBox links with the bot, guaranteeing a streamlined interaction.
 
-3. **Receive Download Links:**
+<b>Receive Download Links:</b>
    - Experience the bot's efficiency as it provides direct download links and comprehensive file information.
 
 </details>
