@@ -53,6 +53,8 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        logger.info(f"♻️Restarting...")
-
-Bot().run()
+        logger.info(f"⚡ Restarting...")
+        
+if __name__ == '__main__':
+    Bot().run()
+    
