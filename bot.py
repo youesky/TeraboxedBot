@@ -28,7 +28,6 @@ class Bot(Client):
     async def start(self):
         logger.info("Creating client from BOT_TOKEN")
         await super().start()
-        time.sleep(5)
         me = await self.get_me()
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name

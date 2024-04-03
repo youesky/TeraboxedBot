@@ -15,14 +15,10 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
    - Validates URLs, fetching direct download links with a commitment to precision.
    - Presents file details such as title, size, and download link in a structured and professional manner.
 
-3. **Access Control:**
-   - Restricts usage to private chats or specified groups, prioritizing privacy and controlled access.
-   - Issues a courteous warning when accessed from unauthorized groups.
-
 ---
 
-### **How to Use:**
-
+<details>
+<summary>How To Use</summary>
 1. **Start a Chat:**
    - Initiate a private chat with the bot, ensuring a discreet and personalized experience.
 
@@ -31,6 +27,8 @@ The TeraboxedBot is designed to help users get direct download links from TeraBo
 
 3. **Receive Download Links:**
    - Experience the bot's efficiency as it provides direct download links and comprehensive file information.
+
+</details>
 
 ---
 
@@ -60,15 +58,15 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
 3. In environment variable section, add the following variables:
 
     <details>
-    <summary><b>Variables</b></summary>
+    <summary>Variables</summary>
       
       <b>Required Variable</b>
     * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
-        
+    * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
+
       <b>Optional Variables</b>
     * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
     * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-    * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
     * `IMAGES`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
     * `WEBHOOK`: True/False if your server is web support required? the value is True else False
     </details>
@@ -78,7 +76,7 @@ Deployment is easy, you can deploy Terabox Bypass on Heroku or Railway.
 
 ---
 
-### TELAGRAM SUPPORT 
+### Telagram Support
 
 * [![EBIZA SUPPORT](https://img.shields.io/static/v1?label=EBIZA&message=SUPPORT&color=critical)](https://t.me/EbizaSupport)
 
