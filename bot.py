@@ -41,8 +41,8 @@ class Bot(Client):
         curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         date = curr.strftime('%d %B, %Y')
         tame = curr.strftime('%I:%M:%S %p')
-        logger.info(LOG_MSG.format(temp.B_NAME, date, tame, __repo__, __version__, __license__, __copyright__))
-        try: await self.send_message(ADMINS[0], LOG_MSG.format(temp.U_NAME, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
+        #logger.info(LOG_MSG.format(temp.B_NAME, date, tame, __repo__, __version__, __license__, __copyright__))
+        try: await self.send_message(ADMINS[0], LOG_MSG.format(temp.B_NAME, date, tame, __repo__, __version__, __license__, __copyright__), disable_web_page_preview=True)   
         except Exception as e: logger.warning(f"Bot Isn't Able To Send Message To ADMINS \n{e}")
         if WEBHOOK is True:
             app = web.AppRunner(await web_server())
@@ -52,8 +52,8 @@ class Bot(Client):
         logger.info(f"Teraboxed Bot [@{temp.U_NAME}] Started!")
 
     async def stop(self, *args):
-        await super().stop()
         logger.info(f"⚡ Restarting...")
+        await super().stop()
         
 if __name__ == '__main__':
     Bot().run()
