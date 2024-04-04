@@ -1,14 +1,16 @@
 {
-    "name": "Link-Bypasser-Bot",
-    "description": "A Telegram Bot (with Site) that can Bypass Ad Links, Generate Direct Links and Jump Paywalls",
+    "name": "TeraboxedBot",
+    "description": "Python Telegram Bot for Bypassing Terabox Links",
+    "logo": "https://te.legra.ph/file/de51e8d53709471b25fea.jpg",
     "keywords": [
-    "telegram",
-    "Link bypass",
-    "bypass bot",
-    "telegram bot"
-  ],
-    "repository": "https://github.com/bipinkrish/Link-Bypasser-Bot",
-    "logo": "https://ibb.co/kMVxrCj",
+        "python",
+        "pyrogram",
+        "telegram",
+        "bot",
+        "teraboxedbot",
+        "terabox"
+    ],
+    "repository": "https://github.com/youesky/TeraboxedBot",
     "env": {
         "HASH": {
             "description": "Your API HASH from my.telegram.org",
@@ -16,11 +18,11 @@
         },
         "ID": {
             "description": "Your API ID from my.telegram.org",
-            "required": true
+            "required": false
         },
         "TOKEN": {
             "description": "Your bot token from @BotFather",
-            "required": true
+            "required": false
         },
         "CRYPT": {
             "description": "GDTot Crypt",
