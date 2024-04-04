@@ -16,8 +16,8 @@ from requests import get, session
 from json import load
 from os import environ, path
 
-from plugins.helper.ext_utils.exceptions import DirectDownloadLinkException
-from plugins.helper.ext_utils.bot_utils import get_readable_file_size
+from plugins.helper.exceptions import DirectDownloadLinkException
+from plugins.helper.bot_utils import get_readable_file_size
 
 
 with open('config.json', 'r') as f: DATA = load(f)
@@ -562,10 +562,10 @@ def uploadee(url: str) -> str:
 
 
 def terabox(url):
-    if not path.isfile('plugins/helper/mirror_utils/download_utils/cookies.txt'):
+    if not path.isfile('plugins/helper/cookies.txt'):
         raise DirectDownloadLinkException("cookies.txt not found")
     try:
-        jar = MozillaCookieJar('plugins/helper/mirror_utils/download_utils/cookies.txt')
+        jar = MozillaCookieJar('plugins/helper/cookies.txt')
         jar.load()
     except Exception as e:
         raise DirectDownloadLinkException(f"ERROR: {e.__class__.__name__}") from e
