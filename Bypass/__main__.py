@@ -10,6 +10,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.filters import command, private, regex, user
 
 from Bypass import bot, LOGGER, OWNER_ID
+from .helper import text
 
 async def start(client, message):
     await bot.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, i am Terabox Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to Read More__",
@@ -17,6 +18,10 @@ async def start(client, message):
         [ InlineKeyboardButton("🌐 Source Code", url="https://github.com/youesky/TeraboxedBot")],
         [ InlineKeyboardButton("Updates", url="https://t.me/Teraboxed") ]]), 
         reply_to_message_id=message.id)
+
+async def help(client, message):
+    msg = text.HELP_TEXT
+    await bot.send_message(message.chat.id, text=msg, reply_to_message_id=message.id, disable_web_page_preview=True)
 
 async def restart_command(client, message):
     restart_message = await message.reply('<i>Restarting...</i>')
@@ -33,7 +38,9 @@ async def restart():
             await bot.edit_message_text(chat_id=chat_id, message_id=msg_id, text="<i>Restarted !</i>")
         except Exception as e:
             LOGGER.error(e)
-            
+
+bot.add_handler(MessageHandler(
+    help, filters=command(BotCommands.HelpCommand)))
 bot.add_handler(MessageHandler(
     start, filters=command(BotCommands.StartCommand)))
 bot.add_handler(MessageHandler(
