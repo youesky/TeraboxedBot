@@ -1,7 +1,7 @@
-import requests
 import base64
-import re
 from bs4 import BeautifulSoup
+from re import search
+from requests import get as rget, post as rpost
 from bypasser import RecaptchaV3
 
 RTOKEN = RecaptchaV3()
@@ -13,10 +13,10 @@ async def getSoup(res):
 
 async def downloaderla(url,site):
     params = {'url': url, 'token': RTOKEN,}
-    return requests.get(site, params=params).json()
+    return rget(site, params=params).json()
 
 async def getImg(url):
-    return requests.get(url).content
+    return rget(url).content
     
 async def decrypt(res, key):
     if res["success"]: return base64.b64decode(res["result"].split(key)[-1]).decode('utf-8')
@@ -46,10 +46,10 @@ async def picfair(url):
 async def slideshare(url,type="pptx"):
     # enum = {"pdf","pptx","img"}
     # if type not in enum: type = "pdf"
-    return requests.get(f"https://downloader.at/convert2{type}.php", params={'url': url}).content
+    return rget(f"https://downloader.at/convert2{type}.php", params={'url': url}).content
 
 async def medium(url):
-    return requests.post('https://downloader.la/read.php', data={'mediumlink': url,}).content
+    return rpost('https://downloader.la/read.php', data={'mediumlink': url,}).content
 
 
 #######################################################################
@@ -69,7 +69,7 @@ async def pass_paywall(url, check=False, link=False):
     img_link = None
     name = "no-name"
     for pattern, downloader_func, img, ftype, idx in patterns:
-        if re.search(pattern, url):
+        if search(pattern, url):
             if check: return True
             img_link = downloader_func(url)
             
