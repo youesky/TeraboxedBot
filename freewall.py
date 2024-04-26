@@ -8,53 +8,53 @@ RTOKEN = RecaptchaV3()
 
 #######################################################################
 
-def getSoup(res):
+async def getSoup(res):
     return BeautifulSoup(res.text, "html.parser")
 
-def downloaderla(url,site):
+async def downloaderla(url,site):
     params = {'url': url, 'token': RTOKEN,}
     return requests.get(site, params=params).json()
 
-def getImg(url):
+async def getImg(url):
     return requests.get(url).content
     
-def decrypt(res, key):
+async def decrypt(res, key):
     if res["success"]: return base64.b64decode(res["result"].split(key)[-1]).decode('utf-8')
 
 #######################################################################
 
-def shutterstock(url):
+async def shutterstock(url):
     res =  downloaderla(url, "https://ttthreads.net/shutterstock.php")
     if res["success"]: return res["result"]
     
-def adobestock(url):
+async def adobestock(url):
     res = downloaderla(url, "https://new.downloader.la/adobe.php") 
     return decrypt(res, "#")
     
-def alamy(url):
+async def alamy(url):
     res = downloaderla(url, "https://new.downloader.la/alamy.php") 
     return decrypt(res, "#")
 
-def getty(url):
+async def getty(url):
     res = downloaderla(url, "https://getpaidstock.com/api.php")
     return decrypt(res, "#")
 
-def picfair(url):
+async def picfair(url):
     res = downloaderla(url, "https://downloader.la/picf.php")
     return decrypt(res, "?newURL=")
 
-def slideshare(url,type="pptx"):
+async def slideshare(url,type="pptx"):
     # enum = {"pdf","pptx","img"}
     # if type not in enum: type = "pdf"
     return requests.get(f"https://downloader.at/convert2{type}.php", params={'url': url}).content
 
-def medium(url):
+async def medium(url):
     return requests.post('https://downloader.la/read.php', data={'mediumlink': url,}).content
 
 
 #######################################################################
 
-def pass_paywall(url, check=False, link=False):
+async def pass_paywall(url, check=False, link=False):
     patterns = [
         (r"https?://(?:www\.)?shutterstock\.com/", shutterstock, True, "png", -1),
         (r"https?://stock\.adobe\.com/", adobestock, True, "png", -2),
