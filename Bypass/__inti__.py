@@ -18,7 +18,14 @@ def getenv(var): return environ.get(var) or DATA.get(var, None)
 BOT_TOKEN = getenv("TOKEN")
 API_HASH = getenv("HASH") 
 API_ID = getenv("ID")
-
+GDTOT_CRYPT = getenv("CRYPT")
+LARAVEL_SESSION = getenv("Laravel_Session")
+XSRF_TOKEN = getenv("XSRF_TOKEN")
+DCRYPT = getenv("DRIVEFIRE_CRYPT")
+KCRYPT = getenv("KOLOP_CRYPT")
+HCRYPT = getenv("HUBDRIVE_CRYPT")
+KATCRYPT = getenv("KATDRIVE_CRYPT")
+CF = getenv("CLOUDFLARE")
 
 log_info("Creating client from BOT_TOKEN")
 bot = tgClient('bot', API_ID, API_HASH, bot_token=BOT_TOKEN, workers=1000,
