@@ -22,15 +22,6 @@ def getenv(var): return environ.get(var) or DATA.get(var, None)
 ##########################################################
 # ENVs
 
-GDTot_Crypt = getenv("CRYPT")
-Laravel_Session = getenv("Laravel_Session")
-XSRF_TOKEN = getenv("XSRF_TOKEN")
-DCRYPT = getenv("DRIVEFIRE_CRYPT")
-KCRYPT = getenv("KOLOP_CRYPT")
-HCRYPT = getenv("HUBDRIVE_CRYPT")
-KATCRYPT = getenv("KATDRIVE_CRYPT")
-CF = getenv("CLOUDFLARE")
-
 ############################################################
 # Lists
 
