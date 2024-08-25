@@ -1,7 +1,7 @@
 {
     "TOKEN": "",
-    "ID": "28542813",
-    "HASH": "02ce7c339f7776844ff4ab03da338ccd",
+    "ID": "",
+    "HASH": "",
     "Laravel_Session": "",
     "XSRF_TOKEN": "",
     "GDTot_Crypt": "",
@@ -11,5 +11,8 @@
     "KATCRYPT": "",
     "UPTOBOX_TOKEN": "",
     "CLOUDFLARE": "",
-    "PORT": 5000
+    "PORT": 5000,
+    "DB_API": "",
+    "DB_OWNER": "bipinkrish",
+    "DB_NAME": "link_bypass.db"
 }

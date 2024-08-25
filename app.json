@@ -18,11 +18,11 @@
         },
         "ID": {
             "description": "Your API ID from my.telegram.org",
-            "required": false
+            "required": true
         },
         "TOKEN": {
             "description": "Your bot token from @BotFather",
-            "required": false
+            "required": true
         },
         "CRYPT": {
             "description": "GDTot Crypt",
@@ -68,6 +68,12 @@
     "buildpacks": [
         {
             "url": "heroku/python"
+    }
+  ],
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "standard-1x"
         }
-    ]
+    }
 }
